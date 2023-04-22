@@ -2,15 +2,17 @@
 ### **MonteCarlo Simulations** <br><br>
 
 ## **Description:**
-This repository contains several Montecarlo exercises. 
+This repository contains several exercises exclusively using  MonteCarlo simulations. 
 <br>
-They are used in order to obtain Probabilities, Expected outcomes of an event and other useful insights, the events are the following:
+Those simulations allow us to obtain Probabilities, Expected Values and other useful insights. <br> 
+The events are the following:<br>
+
 1. Bet on a Game of repeatedly Tossing a Coin 
 2. Bet on a Game of 3 Dices rolled simultaneously.
 3. Monty Hall Problem: within three doors lies a prize; behind the other two, goats.<br>
 After opening a door without knowing the result.<br>*¿How is probability affected by a door opening with a goat behind?*<br>*¿Would there be an advantage for changing the first door chosen?*<br>     
 4. By generating triangles randomly.<br>
-*¿What are acute?*
+*How many are acute?*
 
 ##### **Diagram:**
 The files in this repository are illustrated in the following diagram:
@@ -22,7 +24,7 @@ The files in this repository are illustrated in the following diagram:
 
 ### **Objective:**
 The objective is to obtain useful insights as $E(V)$, Probabilities and other useful insights based on simulations from a given set of rules or data.<br>
-*The instructions, source code for indiv. solutions and their output is contained in the main notebook:* [Simulations.ipynb](https://github.com/EstebanMqz/MonteCarlo-Simulations)
+*The instructions, source code for indiv. solutions and their output is contained in the main notebook:* [Simulations.ipynb](https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/MC-Simulations.ipynb)
 
 ### **Contributors:** 
 ![GitHub Logo](https://github.com/EstebanMqz.png?size=30)
