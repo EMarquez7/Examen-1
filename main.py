@@ -15,8 +15,3 @@ import visualizations as vs
 import data as dt
 #Libraries in main
 import pandas as pd
-#pd options
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.expand_frame_rep', True)
-pd.set_option('display.width', None)

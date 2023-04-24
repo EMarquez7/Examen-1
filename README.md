@@ -44,3 +44,7 @@ The processes followed are visualized at [Simulations.ipynb](https://github.com/
 
 If you have any questions or comments, please feel free to send me a message here:<br>
 [![Gmail-Badge](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:emarquez1895@gmail)
+
+
+##### **References:**
+[](https://numpy.org/doc/stable/reference/random/index.html)

@@ -15,11 +15,8 @@ import data as dt
 import main 
 #Libraries in fn
 import pandas as pd
-#pd options
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.expand_frame_rep', True)
-pd.set_option('display.width', None)
+import numpy as np
+from random import randrange
 
 #Define empty docstring
 docstring = ""
@@ -63,3 +60,84 @@ def get_requirements(docstring):
     print("requirements.txt file is created, it's in user's local path:", path.abspath("requirements.txt"))
     
 
+def coin_game(initial_cap, bet, n_tosses, prize, start):
+    """
+    Simulates a coin game where the player tries to win by tossing coins.
+    The player wins if the difference between the number of heads and tails is 3,
+    and loses if the difference while it is lower, counters are reset after each win.
+
+    Parameters
+    ----------
+    initial_cap : int
+        The initial capital of the player.
+    bet : int
+        The amount of money that the player bets on each coin toss.
+    n_tosses : int
+        The number of coin tosses.
+    prize : int
+        The amount of money that the player wins if the coin toss is heads.
+    start : int
+        The starting value of the variables.
+    Returns
+    -------
+    capital : numpy.ndarray
+        The capital of the player at each coin toss.
+    """
+
+    #Vectors of zeros for filling.
+    capital = np.zeros(n_tosses) 
+    heads = np.zeros(n_tosses) 
+    tails = np.zeros(n_tosses)
+    diff = np.zeros(n_tosses) 
+    tosses = np.zeros(n_tosses)
+
+    #Variables at game start.
+    capital[0] = initial_cap 
+    heads[0] = start
+    tails[0] = start 
+    diff[0] = start 
+    tosses[0] = start
+
+    #Working with arrays outside function: nonlocal variables.
+    def fill_vector(i):
+        nonlocal capital 
+        nonlocal heads
+        nonlocal tails
+        nonlocal diff
+        nonlocal tosses
+
+        #Coin toss = Heads.
+        if randrange(2) == 0: 
+            heads[i+1] = heads[i] + 1 
+            tails[i+1] = tails[i]     
+            diff[i+1] = abs(tails [i+1] - heads [i+1] ) 
+            tosses[i+1] = tosses[i] + 1 	
+        else:
+            #Coin toss = Tails.
+            tails[i+1] = tails[i] + 1 
+            heads[i+1] = heads[i] 
+            diff[i+1] = abs(tails [i+1] - heads [i+1] ) 
+            tosses[i+1] = tosses[i] + 1
+
+        #Lose bet ($1): Difference in tossed coins (H & T) < 3.         
+        if diff[i] < 3: 
+                capital[i + 1] = capital[i] - bet
+
+        #Win bet ($8): Difference in tossed coins (H & T) = 3.                  
+        if diff[i] == 3: 
+                capital[i + 1] = capital[i] + prize
+                #Reset (H & T). 
+                heads[i+1] = start
+                tails[i+1] = start
+                diff[i+1] = start
+        
+    #Fill variables with values.           
+    [fill_vector(i) for i in range(n_tosses - 1)]
+
+    #Make a Dataframe of resulting capital per toss. 
+    capital = pd.DataFrame(capital)
+    capital.columns = ['Capital']
+    capital.index.name = 'Tosses'
+    capital.index = capital.index + 1
+
+    return capital
