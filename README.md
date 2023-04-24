@@ -2,10 +2,10 @@
 ### **MonteCarlo Simulations** <br><br>
 
 ## **Description:**
-This repository contains several exercises exclusively using  MonteCarlo simulations. 
+This repository contains exercises with MonteCarlo simulations. 
 <br>
-Those simulations allow us to obtain Probabilities, Expected Values and other useful insights. <br> 
-The events are the following:<br>
+Simulations allow us to obtain Probabilities, Expected Values and other useful insights. <br> 
+The events simulated are the following:<br>
 
 1. Bet on a Game of repeatedly Tossing a Coin 
 2. Bet on a Game of 3 Dices rolled simultaneously.
@@ -23,8 +23,8 @@ The files in this repository are illustrated in the following diagram:
 
 
 ### **Objective:**
-The objective is to obtain useful insights as $E(V)$, Probabilities and other useful insights based on simulations from a given set of rules or data.<br>
-*The instructions, source code for indiv. solutions and their output is contained in the main notebook:* [Simulations.ipynb](https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/MC-Simulations.ipynb)
+The objective is to obtain useful insights as $E(V)$, Probabilities and other decision making tools based on simulations from a known environment or data.<br>
+The processes followed are visualized at [Simulations.ipynb](https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/MC-Simulations.ipynb)
 
 ### **Contributors:** 
 ![GitHub Logo](https://github.com/EstebanMqz.png?size=30)
@@ -41,10 +41,6 @@ The objective is to obtain useful insights as $E(V)$, Probabilities and other us
 
 
 ##### License:&nbsp;[![Creative Commons BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/3.0/)<br>
-
-
-*Note:* This repository was modified for *presentation* purposes.<br>
-[commit-history](https://github.com/EstebanMqz/MonteCarlo-in-Casino-and-Cafe/commits/main) is found here.<br>
 
 If you have any questions or comments, please feel free to send me a message here:<br>
 [![Gmail-Badge](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:emarquez1895@gmail)

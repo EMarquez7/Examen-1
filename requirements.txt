@@ -1,10 +1,10 @@
 
 # -- ------------------------------------------------------------------------------------------------------------------------   -- # 
-# -- project: MonteCarlo-Analysis                                                                                               -- # 
+# -- project: MonteCarlo-Simulations                                                                                            -- # 
 # -- script: requirements.txt: txt file to download Python modules for execution                                                -- # 
 # -- author: EstebanMqz                                                                                                         -- # 
 # -- license: CC BY 3.0                                                                                                         -- # 
-# -- repository: https://github.com/EstebanMqz/MonteCarlo-Analysis/blob/main/requirements.txt                                   -- # 
+# -- repository: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/requirements.txt                                -- # 
 # -- ------------------------------------------------------------------------------------------------------------------------   -- # 
 
 

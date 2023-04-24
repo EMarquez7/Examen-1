@@ -9,10 +9,13 @@
 """
 
 from os import path
+#Dependencies
 import functions as fn
-import visualizations as vs
 import data as dt
-
+import main
+#Libraries in vs
+import pandas as pd
+#pd options
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.expand_frame_rep', True)
