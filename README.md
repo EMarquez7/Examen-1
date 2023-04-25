@@ -47,4 +47,6 @@ If you have any questions or comments, please feel free to send me a message her
 
 
 ##### **References:**
-[](https://numpy.org/doc/stable/reference/random/index.html)
+[IPython](https://pypi.org/project/ipython/)
+[tabulate](https://pypi.org/project/tabulate/)
+[jupyter](https://pypi.org/project/jupyter/)	

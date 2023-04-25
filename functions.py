@@ -47,6 +47,7 @@ def get_requirements(docstring):
         "numpy >=": np.__version__,
         "pandas >=": pd.__version__,
         "matplotlib >=": plt.__version__,
+        "IPython.display >=": "8.12.0",
     }
 
     with open("requirements.txt", "w") as f:
@@ -54,10 +55,11 @@ def get_requirements(docstring):
         for key, value in requirements.items():
             f.write(f"{key} {value} \n")
         #MODIFY THIS IF YOU IMPORT OTHER LIBRARIES
-        f.write("jupyter >= 1.0.0")
-        
-    #Link to requirements.txt
-    print("requirements.txt file is created, it's in user's local path:", path.abspath("requirements.txt"))
+        f.write("jupyter >= 1.0.0 \n")
+        f.write("IPython >=" "8.12.0 \n")
+        f.write("tabulate >= 0.9.0 \n")
+
+    print("requirements.txt file created in local path:", path.abspath("requirements.txt"))
     
 
 def coin_game(initial_cap, bet, n_tosses, prize, start):
