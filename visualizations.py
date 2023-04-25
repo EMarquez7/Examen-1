@@ -78,36 +78,39 @@ def MC_plot(simulations, E_V, xlabel , ylabel, i_capital, f_capital, N):
     
     return plt.show()
 
-def hist_plot(simulation, xlabel , ylabel, n_games, n, i_capital, color):
+def hist_plot(sim, mu, bins, xlabel , n):
     """Plots a hist plot of the final capital in Monte Carlo simulations.
     Parameters
     ----------
-    coin_simulation : pandas.DataFrame
-        The capital of the player at each coin toss.
+    Sim : pd.DataFrame or list 
+        Final Capital for Simulations.
+    E_V : pandas.DataFrame
+        Expected value(s) for simulations.
+    bins : int
+        The number of bins for the hist plot.
     xlabel : str
         The label of the x-axis.
-    ylabel : str
-        The label of the y-axis.
-    n_games : int
-        The number of games played.
     n : int
-        The number of simulations of n games planned to play.
-    i_capital : int
-        The initial capital of the player.
-    f_capital : int
-        The final capital of the player.
+        The number of simulations.
     Returns
     -------
     line_plot : matplotlib.pyplot
-        The line plot of the capital over time in n Monte Carlo simulations.
+        An hist plot of FV for n Monte Carlo simulations.
     """
 
-    plt.title("Final capital after planned " + str(n_games) + " games with starting capital of " + str(i_capital)
-          + " calculated with " + str(n) + " planned played games simulations (Monte Carlo")
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
+    plt.title("Results for: " + str(n) + " Monte Carlo Simulations")
+    plt.xlabel(xlabel) 
+    plt.ylabel("Density")
+
     #Hist plot
-    plt.hist(simulation, bins = 20, color = color, width = 5, edgecolor='black', density=True)[2]
+    plt.hist(sim, edgecolor='black', density=True, bins=bins)[2]
+    plt.axvline(mu.mean()[0], color='red', linestyle='dashed', linewidth=1, label='Expected Value')
+    #Set the best amount of bins for the hist plot.
+    plt.xlabel(xlabel)
+    plt.xticks(range(0, int(round(sim.max(), 0)), 5), [str(i) + "$" for i in range(0, int(round(sim.max(), 0)), 5)])
+    plt.legend()
+
+
     plt.gcf().set_size_inches(12, 8)
 
     return plt.show()
