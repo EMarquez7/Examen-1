@@ -1,17 +1,14 @@
+# -- --------------------------------------------------------------------------------------------------  -- #       
+# -- Repository: MonteCarlo-Simulations
+# -- Requirements: requirements.txt
+# -- Author(s): EstebanMqz
+# -- License: CC BY 3.0
+# -- Environment: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/requirements.txt
+# -- --------------------------------------------------------------------------------------------------  -- #
 
-# -- --------------------------------------------------------------------------------------------------  -- # 
-# -- project: MonteCarlo-Simulations                                                                     -- # 
-# -- script: requirements.txt: txt file to download Python modules for execution                         -- # 
-# -- author: EstebanMqz                                                                                  -- # 
-# -- license: CC BY 3.0                                                                                  -- # 
-# -- repository: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/requirements.txt         -- # 
-# -- --------------------------------------------------------------------------------------------------  -- # 
-
-
-numpy >= 1.23.5 
-pandas >= 1.4.4 
-matplotlib >= 3.5.3 
-IPython.display >= 8.12.0 
+matplotlib >= 3.5.3
+numpy >= 1.25.0
+pandas >= 1.4.4
+tabulate >= 0.8.9
 jupyter >= 1.0.0 
-IPython >=8.12.0 
-tabulate >= 0.9.0 
+ipython >= 8.10.0 

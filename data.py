@@ -1,35 +1,99 @@
-"""
-# -- ------------------------------------------------------------------------------------------------------------------------ -- #   
-# -- project: MonteCarlo-Simulations                                                                                            -- #           
-# -- script: data.py : Python script with data functionality for the project                                                  -- #                 
-# -- author: EstebanMqz                                                                                                       -- #  
-# -- license: CC BY 3.0                                                                                                       -- #
-# -- repository: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/data.py                                          -- #           
-# -- ------------------------------------------------------------------------------------------------------------------------ -- #  
-"""
+{""" # -- --------------------------------------------------------------------------------------------------  -- #       
+# -- Repository: MonteCarlo-Simulations
+# -- Requirements: data.py
+# -- Author(s): EstebanMqz
+# -- License: CC BY 3.0
+# -- Environment: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/data.py
+# -- --------------------------------------------------------------------------------------------------  -- #
 
-from os import path
-#Dependencies
-import functions as fn
-import visualizations as vs
-import main 
-#Libraries in dt
+"""} #Dependencies
+import glob
+import os
+import subprocess
+import functions as fn 
+
+#Libraries 
 import pandas as pd
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
-def library_install(requirements_txt):
-    """Install requirements.txt file."""
-    import os
-    import warnings
-    warnings.filterwarnings("ignore")
-    os.system(f"pip install -r {requirements_txt}")
-    print("Requirements installed.")
-    with open("requirements.txt", "r") as f:
-        print(f.read())
+# -- ----------------------------------------------------------------------------------------------- data ------------------------------------------------------------------------------- -- #
+def get_requirements(docstring, ext):
+    {"""
+    Function to create requirements.txt with required packages & versions to 
+    setup an environment for a project's execution to ensure collaborations.
 
+    Parameters:
+    ----------
+    + docstring: str
+        Docstring of requirements.txt script usually: (repository, requirements, author, license, environment).
+    + ext: str
+        Extension of the scripts to extract modules used and versions for requirements.txt file creation/update.
+    Returns:
+    -------
+    + requirements.txt: .txt file
+        .txt script with modules & versions used in repository to setup or update venv & ensure collaborations.
+    """}
+
+    mod = [__import__(name[:-3]) for name in glob.glob(ext)]   
+    subprocess.run(["pipreqs", "--encoding", "utf-8", "./", "--force"])
+    
+    with open("requirements.txt", "r+") as f:
+        old = f.read() 
+        f.seek(0) 
+        f.write((docstring + old).replace("==", " >= "))
+        f.write("jupyter >= 1.0.0 \n")
+
+    with open(glob.glob('*.txt')[0], 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            if '~' in line:
+                lines.remove(line)
+            elif 'ipython' in line:
+                lines.remove(line)
+                lines.append('ipython >= 8.10.0 \n') 
+
+    with open(glob.glob('*.txt')[0], 'w') as file: file.writelines(lines)
+    with open(glob.glob('*.txt')[0], 'r') as file: print(file.read())
+
+    script = glob.glob(ext)
+
+    return print("scripts:", script)
+
+def write_docstring(docstring, script):
+    {"""
+    Inserts introductory docstring in .py scripts for the cwd.
+
+    Parameters:
+    ----------
+    + docstring: str 
+        The docstring to insert.
+    + script: str
+        The name of the script in cwd.
+
+    Returns:
+    -------
+    + str(docstring) + script: str
+        The docstring inserted in the .py script.    
+    """}
+
+    cwd = os.getcwd()
+    path = os.path.join(cwd, script)
+
+    with open(script, "r+") as f:
+        old = f.read()
+
+        if str(docstring) not in old:
+            f.seek(0)
+            f.write(str('{""" ') + docstring + str('"""} ') + '\r' + old)
+        else:
+            pass
+
+    return print(str('Succesfully created docstring for: ') + script)
 
 def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
-    """Creates a dataframe of n simulations of the coin game for n_tosses.
+    {"""Creates a dataframe of n simulations of the coin game for n_tosses.
     Parameters
     ----------
     i_capital : int
@@ -48,17 +112,15 @@ def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
     -------
     df : pandas.DataFrame
         A dataframe of n simulations for coin games played.
-    """
+    """}
     
-    #Create an array of n simulations of the coin game for n_tosses.
     simulation_arr=[fn.coin_game(i_capital, bet, n_tosses, prize, i_tosses_counter) for i in range(n_sim)]
-
-    #Create dataframe from simulations.
+    
     df = pd.DataFrame([i.iloc[:,0].values for i in simulation_arr])
-    #Rename columns and index.
     df.columns = [str(i) for i in range(1, n_tosses+1)]
-    #Index and last column name
     df.index.name = 'Sim'
     df.rename(columns={str(n_tosses): n_tosses}, inplace=True)
 
     return df
+
+

@@ -1,52 +1,60 @@
-# **Simulation Processes**
-### **MonteCarlo Simulations** <br><br>
+### **MonteCarlo Simulation** <br><br>
 
-## **Description:**
-This repository contains exercises with MonteCarlo simulations. 
+<Details> <Summary> <i> <font color= 'orange'> Files Visualization: </font> </i> </Summary>
+
+[![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FMonteCarlo-Simulation) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/MonteCarlo-Simulation/blob/main/MC-Simulation.ipynb)
+
+<img src="diagram.svg" width="280" height="280">
+</Details> 
+
+#### **Repository Tools:**
+<font>
+<Details>
+<Summary> <b>Click to expand</b> </Summary>
+
+##### Actions:  [![Repo-Visualization-Badge](https://img.shields.io/badge/Action-Visualization-020521?style=square&logo=github&logoColor=white)](https://githubnext.com/projects/repo-visualization)
+##### Main Text-Editor:  [![VSCode-Badge](https://img.shields.io/badge/VSCode-007ACC?style=square&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)  [![Jupyter-Badge](https://img.shields.io/badge/Jupyter-F37626?style=square&logo=Jupyter&logoColor=white)](https://jupyter.org/try)
+##### Language:  [![Python-Badge](https://img.shields.io/badge/Python-2b6dd6.svg?style=square&logo=Python&logoColor=green)](https://www.python.org)[![Markdown-Badge](https://img.shields.io/badge/Markdown-000000.svg?style=square&logo=Markdown&logoColor=white)](https://www.markdownguide.org)[![yaml-Badge](https://img.shields.io/badge/YAML-000000?style=square&logo=yaml&logoColor=red)](https://yaml.org)
+##### Libraries:  [![Numpy-Badge](https://img.shields.io/badge/Numpy-013243?style=square&logo=numpy&logoColor=white)](https://numpy.org)  [![Pandas-Badge](https://img.shields.io/badge/Pandas-150458?style=square&logo=pandas&logoColor=white)](https://pandas.pydata.org)  [![Random-Badge](https://img.shields.io/badge/Random-000000?style=square&logo=python&logoColor=white)](https://docs.python.org/3/library/random.html)  [![Matplotlib-Badge](https://img.shields.io/badge/Matplotlib-40403f?style=square&logo=python&logoColor=blue)](https://matplotlib.org)
+##### Interface:  [![React-Badge](https://img.shields.io/badge/React-61DAFB?style=square&logo=react&logoColor=black)](https://create-react-app.dev)
+##### Version Control:  [![GitHub-Badge](https://img.shields.io/badge/GitHub-100000?style=square&logo=github&logoColor=white)](https://github.com)  [![Git-Badge](https://img.shields.io/badge/Git-F05032.svg?style=square&logo=Git&logoColor=white)](https://git-scm.com)
+[![Git-Commands](https://img.shields.io/badge/Git%20Commands-gray?style=square&logo=git&logoColor=white)](https://github.com/EstebanMqz/Git-Commands)
+##### License: [![Creative Commons BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-yellow.svg?style=square&logo=creative-commons&logoColor=white)](https://creativecommons.org/licenses/by/3.0/)
+</Details>
+
+##### Contact: 
+<font>
+<Details>
+<Summary> <b>Click to expand</b> </Summary>
+
+[![Website](https://img.shields.io/badge/Website-ffffff?style=square&logo=opera&logoColor=red)](https://estebanmqz.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-041a80?style=square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/esteban-m65381722210212839/) [![Portfolio](https://img.shields.io/badge/Github-Portfolio-010b38?style=square&logo=github&logoColor=black)](https://estebanmqz.github.io/Portfolio/) [![E-mail](https://img.shields.io/badge/Business-Mail-052ce6?style=square&logo=mail&logoColor=white)](mailto:esteban@esteban.com)
+
+![GitHub Logo](https://github.com/EstebanMqz.png?size=50) [![Github](https://img.shields.io/badge/Github-000000?style=square&logo=github&logoColor=white)](https://github.com/EstebanMqz)
+</Details>
+
+**Description:**
+
+This repository contains a MonteCarlo simulation in order to obtain Expected Values:<br>
+$$E(V) \approx \frac{1}{N_{sim}} \sum_{i=1}^{N_{sim}} V_i=\mu_{M.C}$$
 <br>
-Simulations allow us to obtain Probabilities, Expected Values and other useful insights. <br> 
-The events simulated are the following:<br>
 
-1. Bet on a Game of repeatedly Tossing a Coin 
-2. Bet on a Game of 3 Dices rolled simultaneously.
-3. Monty Hall Problem: within three doors lies a prize; behind the other two, goats.<br>
-After opening a door without knowing the result.<br>*¿How is probability affected by a door opening with a goat behind?*<br>*¿Would there be an advantage for changing the first door chosen?*<br>     
-4. By generating triangles randomly.<br>
-*How many are acute?*
+As well as its $RoI$, Probabilities $P(X)$, from its density function <i>pdf</i> $f(X)$ and cumulative density function $F(X)$.<br>
+Fundamental decision making tools made from scripts and snippets.<br>
 
-##### **Diagram:**
-The files in this repository are illustrated in the following diagram:
+### **Results:**
+Even though ${E(V)}\approx \mu_{M.C}$ in every simulation, there are other values that are possible as well $\forall N_{sim}$ in the Casi-no:<br>
+<img src="/images/MC_Sim.png" width="800" height="440"><br>
 
-<img src="diagram.svg" width="350" height="350">
+So the Prob. of Win/Lose $\forall N_{sim} = 10000$ are:
+<br>
 
-[Azure Web-App](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FMonteCarlo-Simulations)
+<img src="/images/W-L.jpg" width="197" height="89">
 
+<br>
 
-### **Objective:**
-The objective is to obtain useful insights as $E(V)$, Probabilities and other decision making tools based on simulations from a known environment or data.<br>
-The processes followed are visualized at [Simulations.ipynb](https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/MC-Simulations.ipynb)
+In this regard, the probability $f(X)$, its cumulative values $F(X)$ and its Expected values $E(V) = \mu_{M.C}$ are:
 
-### **Contributors:** 
-![GitHub Logo](https://github.com/EstebanMqz.png?size=30)
+<img src="/images/fx.jpg" width="300" height="450"> <br>
 
----
-### **Tools:**
-##### Github Action:&nbsp;[![Repo-Visualization-Badge](https://img.shields.io/badge/Action-Visualization-020521?style=flat-square&logo=github&logoColor=white)](https://githubnext.com/projects/repo-visualization)<br>
-##### Main Text-Editor:&nbsp;[![VSCode-Badge](https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)&nbsp;[![Jupyter-Badge](https://img.shields.io/badge/Jupyter-Notebook-orange.svg?style=flat-square&logo=Jupyter&logoColor=white)](https://jupyter.org)
-##### Language:&nbsp;[![Python-Badge](https://img.shields.io/badge/Python-2b6dd6.svg?style=flat-square&logo=Python&logoColor=green)](https://www.python.org)[![Markdown-Badge](https://img.shields.io/badge/Markdown-000000.svg?style=flat-square&logo=Markdown&logoColor=white)](https://www.markdownguide.org)[![yaml-Badge](https://img.shields.io/badge/YAML-000000?style=flat-square&logo=yaml&logoColor=red)](https://yaml.org)
-##### Libraries:&nbsp;[![Random-Badge](https://img.shields.io/badge/Random-000000?style=flat-square&logo=random&logoColor=white)](https://docs.python.org/3/library/random.html)&nbsp;[![Matplotlib-Badge](https://img.shields.io/badge/Matplotlib-013243?style=flat-square&logo=matplotlib&logoColor=white)](https://matplotlib.org)&nbsp;[![Numpy-Badge](https://img.shields.io/badge/Numpy-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org)&nbsp;[![Pandas-Badge](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org)<br>
-##### Interface:&nbsp;[![React-Badge](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)](https://create-react-app.dev)[![Azure-Badge](https://img.shields.io/badge/Azure-0089D6?style=flat-square&logo=microsoft-azure&logoColor=white)](https://portal.azure.com/#allservices/category/All)<br>
-##### Version Control:&nbsp;[![GitHub-Badge](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=white)](https://github.com)&nbsp;[![Git-Badge](https://img.shields.io/badge/Git-F05032.svg?style=flat-square&logo=Git&logoColor=white)](https://git-scm.com)<br>
-[![Git-Commads](https://img.shields.io/badge/Git%20Commands-gray?style=flat-square&logo=git&logoColor=white)](https://github.com/EstebanMqz/Git-Commands)<br><br>
-
-
-##### License:&nbsp;[![Creative Commons BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by/3.0/)<br>
-
-If you have any questions or comments, please feel free to send me a message here:<br>
-[![Gmail-Badge](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:emarquez1895@gmail)
-
-
-##### **References:**
-[IPython](https://pypi.org/project/ipython/)
-[tabulate](https://pypi.org/project/tabulate/)
-[jupyter](https://pypi.org/project/jupyter/)	
+The $f(X)$ prob. density function for the $Win_{Events}$ and $FV$ are illustrated:
+<img src="/images/MC_Prob.png" width="800" height="315">
