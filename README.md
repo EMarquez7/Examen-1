@@ -43,7 +43,7 @@ Fundamental decision making tools made from scripts and snippets.<br>
 
 ### **Results:**
 Even though ${E(V)}\approx \mu_{M.C}$ in every simulation, there are other values that are possible as well $\forall N_{sim}$ in the Casi-no:<br>
-<img src="/images/MC_Sim.jpg" width="800" height="347"><br>
+<img src="/images/MC_Sim.jpg" width="800" height="463"><br>
 
 So the Prob. of Win/Lose $\forall N_{sim} = 10000$ are:
 <br>
@@ -57,4 +57,4 @@ In this regard, the probability $f(X)$, its cumulative values $F(X)$ and its Exp
 <img src="/images/fx.jpg" width="260" height="491"> <br>
 
 The histograms for the prob. density function $f(X)$ on the $Win_{Events}$ and $FV$ are illustrated:
-<img src="/images/histogram.jph" width="896" height="493">
+<img src="/images/histogram.jpg" width="896" height="402">
