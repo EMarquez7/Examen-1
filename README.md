@@ -25,7 +25,7 @@
 <Details> <Summary> <i>  Visualization: </i> </Summary>
 
 [![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FMonteCarlo-Simulation) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/MonteCarlo-Simulation/blob/main/MC-Simulation.ipynb)
-
+  
 <img src="diagram.svg" width="280" height="280">
 </Details> 
 
@@ -53,6 +53,7 @@ Resulting prob. density functions $f(X)$ on $Win_{Events}$ & $FV$:
 </Details> 
 
 ###### References:<br>
-[Expectancy E[X]](https://en.wikipedia.org/wiki/Expected_value)<br>
-[Probability-density-function](https://en.wikipedia.org/wiki/Probability_density_function)<br>
-[Cumulative-density-function](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
++ [Monte Carlo Estimator](http://www.mit.edu/~kircher/sim.pdf)<br>
++ [Expectancy $E[X]$](https://en.wikipedia.org/wiki/Expected_value) ,&nbsp; [$RoI$](https://en.wikipedia.org/wiki/Rate_of_return)<br>
++ [$f(x)$ <b>(PDF)</b> <i> Probability density function </i>](https://en.wikipedia.org/wiki/Probability_density_function)<br>
++ [$F(x)$ <b>(CDF)</b> <i> Cumulative distribution function </i>](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>

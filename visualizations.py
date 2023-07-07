@@ -6,7 +6,8 @@
 # -- Environment: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/visualizations.py
 # -- --------------------------------------------------------------------------------------------------  -- #
 
-"""} #Libraries 
+"""} 
+#Libraries 
 import matplotlib.pyplot as plt
 
 import warnings
@@ -23,7 +24,7 @@ def MC_plot(simulation, n,  EV_RoI, xlabel , ylabel):
     n : int
         Number of simulations.
     EV_RoI : pandas.DataFrame
-        Dataframe of simulation(s) with col 1,2 : EV_RoI['E(V)'], EV_RoI['RoI'].
+        Dataframe of simulation(s) with col 1,2 : EV_RoI['E[X]'], EV_RoI['E[RoI]'].
     xlabel, ylabel : str
         The label of the x-axis, y-axis.
     Returns
@@ -32,7 +33,7 @@ def MC_plot(simulation, n,  EV_RoI, xlabel , ylabel):
         Plot of simulated values and E(V) from i to n event(s) in a MonteCarlo simulation.
     """}
 
-    RoI = EV_RoI['RoI'].iloc[-1].round(6)
+    RoI = EV_RoI['$E[X]_{RoI}$'].iloc[-1].round(6)
     color = ["red" if RoI < 0 else "green"][0]
 
     plt.style.use('dark_background')
@@ -45,12 +46,12 @@ def MC_plot(simulation, n,  EV_RoI, xlabel , ylabel):
     simulation.plot(ax = ax, xlabel = xlabel, ylabel = ylabel, title = (str(n) + " Monte Carlo Simulation(s)"), linewidth = 0.15).legend().remove()
     ax.title.set_color('teal'), ax.title.set_size(20)
    
-    plt.axhline(y = EV_RoI['E(V)'].iloc[0], color = "white", linewidth = .8)
-    plt.axhline(y = EV_RoI['E(V)'].iloc[-1], color = color, linewidth = .8)
+    plt.axhline(y = EV_RoI['E[X]'].iloc[0], color = "white", linewidth = .8)
+    plt.axhline(y = EV_RoI['E[X]'].iloc[-1], color = color, linewidth = .8)
     plt.axhline(y = 0, color = color, linewidth = 1.2)
-    plt.axhspan(EV_RoI['E(V)'].iloc[0], EV_RoI['E(V)'].iloc[-1], facecolor = color, alpha = 0.2)
-    EV_RoI['E(V)'].plot(ax = ax, color = color, linewidth = 1)
-    plt.text(0.5, 0.5, "RoI ≈ " + str(RoI), fontsize=13, color=color, transform=ax.transAxes, position = (0.8, 0.65))
+    plt.axhspan(EV_RoI['E[X]'].iloc[0], EV_RoI['E[X]'].iloc[-1], facecolor = color, alpha = 0.2)
+    EV_RoI['E[X]'].plot(ax = ax, color = color, linewidth = 1)
+    plt.text(0.5, 0.5, "E[RoI] ≈ " + str(RoI), fontsize=13, color=color, transform=ax.transAxes, position = (0.8, 0.65))
 
     plt.grid(True), plt.grid(which='both', color='gray', linestyle='--', alpha = 0.8)
     ax.xaxis.label.set_size(15), ax.yaxis.label.set_size(15), ax.xaxis.label.set_color('teal'), ax.yaxis.label.set_color('teal')
