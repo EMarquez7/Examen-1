@@ -15,46 +15,49 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 # -- ----------------------------------------------------------------------------------------------- visualizations ------------------------------------------------------------------------------- -- #
 
-def MC_plot(simulation, n,  EV_RoI, xlabel , ylabel):
-    {"""Plots a line plot of events for n Monte Carlo simulations.
+def MC_plot(MC, EX, xlabel , ylabel):
+    {"""Plots line plots of Events for all N Monte Carlo simulations, retrieves Expetancy of random variables X & Rate of Return.
+     
     Parameters
     ----------
-    simulation : pd.DataFrame
-        Dataframe of Monte Carlo simulation(s) for event(s).
-    n : int
-        Number of simulations.
-    EV_RoI : pandas.DataFrame
-        Dataframe of simulation(s) with col 1,2 : EV_RoI['E[X]'], EV_RoI['E[RoI]'].
+    MC : pd.DataFrame
+        Dataframe of MonteCarlo Simulations (cols.) from a set of events (rows).
+    EX : pandas.DataFrame
+        Dataframe of E[X] & E[RoI] on cols. 1,2: EX['$E[X]$'], EX['$E[RoI]$'].
+        Note: EX display is on markdown.
     xlabel, ylabel : str
-        The label of the x-axis, y-axis.
+        Labels of the x-axis, y-axis.
     Returns
     -------
     line_plot : matplotlib.pyplot
-        Plot of simulated values and E(V) from i to n event(s) in a MonteCarlo simulation.
+        Plot of N simulations with X, E[X] & RoI.
     """}
 
-    RoI = EV_RoI['$E[X]_{RoI}$'].iloc[-1].round(6)
+    RoI = EX['$E[RoI]$'].iloc[-1].round(6)
+    N = MC.shape[0] if MC.shape[0] > MC.shape[1] else MC.shape[1]
     color = ["red" if RoI < 0 else "green"][0]
 
     plt.style.use('dark_background')
     plt.rc('grid', linestyle="--", color='gray')
-    plt.rc('ytick', labelsize=13, color='blue'), plt.rc('xtick', labelsize=13, color = color)
+    plt.rc('ytick', labelsize=13, color=color), plt.rc('xtick', labelsize=13, color = 'white')
    
     fig, ax = plt.subplots(figsize = (18, 10))
     ax.set_facecolor('black')
 
-    simulation.plot(ax = ax, xlabel = xlabel, ylabel = ylabel, title = (str(n) + " Monte Carlo Simulation(s)"), linewidth = 0.15).legend().remove()
-    ax.title.set_color('teal'), ax.title.set_size(20)
+    MC.plot(ax = ax, title = (str(N) + " Simulation(s)"), linewidth = 0.15).legend().remove()
    
-    plt.axhline(y = EV_RoI['E[X]'].iloc[0], color = "white", linewidth = .8)
-    plt.axhline(y = EV_RoI['E[X]'].iloc[-1], color = color, linewidth = .8)
-    plt.axhline(y = 0, color = color, linewidth = 1.2)
-    plt.axhspan(EV_RoI['E[X]'].iloc[0], EV_RoI['E[X]'].iloc[-1], facecolor = color, alpha = 0.2)
-    EV_RoI['E[X]'].plot(ax = ax, color = color, linewidth = 1)
-    plt.text(0.5, 0.5, "E[RoI] ≈ " + str(RoI), fontsize=13, color=color, transform=ax.transAxes, position = (0.8, 0.65))
+    plt.axhline(y = EX['$E[X]$'].iloc[0], color = "white", linewidth = .8)
+    plt.axhline(y = EX['$E[X]$'].iloc[-1], color = color, linewidth = .8)
+    plt.axhline(y = 0, color = color, linewidth = .5)
+    plt.axhspan(EX['$E[X]$'].iloc[0], EX['$E[X]$'].iloc[-1], facecolor = color, alpha = 0.2)
+    EX['$E[X]$'].plot(ax = ax, color = color, linewidth = 1)
+    plt.text(0.5, 0.5, "$E[RoI]$ ≈ " + str(RoI), fontsize=13, color=color, transform=ax.transAxes, position = (0.8, 0.65))
 
     plt.grid(True), plt.grid(which='both', color='gray', linestyle='--', alpha = 0.8)
-    ax.xaxis.label.set_size(15), ax.yaxis.label.set_size(15), ax.xaxis.label.set_color('teal'), ax.yaxis.label.set_color('teal')
+    
+    ax.set_xlabel(xlabel), ax.set_ylabel(ylabel), ax.xaxis.label.set_color('teal'), ax.yaxis.label.set_color('teal')
+    ax.xaxis.label.set_size(15), ax.yaxis.label.set_size(15), ax.title.set_size(20), ax.title.set_color('teal')
+    plt.savefig('images/MC_Sim.jpg', dpi = 300, bbox_inches='tight')
 
     return plt.show()
 
@@ -82,5 +85,6 @@ def bar_plots(df1, df2, xlabel1, xlabel2, title1, title2):
     ax1.xaxis.label.set_size(15), ax1.yaxis.label.set_size(15)
     ax2.xaxis.label.set_size(15), ax2.yaxis.label.set_size(15)
     ax1.title.set_size(17), ax2.title.set_size(17)
+    plt.savefig('images/bar_plots.jpg', dpi = 300, bbox_inches='tight')
 
     plt.show()

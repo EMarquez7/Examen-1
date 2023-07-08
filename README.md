@@ -22,38 +22,61 @@
 ![GitHub Logo](https://github.com/EstebanMqz.png?size=50) [![Github](https://img.shields.io/badge/Github-000000?style=square&logo=github&logoColor=white)](https://github.com/EstebanMqz)
 </Details>
 
-<Details> <Summary> <i>  Visualization: </i> </Summary>
+<Details> <Summary> <i> Repo Visualization: </i> </Summary>
+
+<a name = "Repo-Visualization"></a>
 
 [![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FMonteCarlo-Simulation) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/MonteCarlo-Simulation/blob/main/MC-Simulation.ipynb)
   
 <img src="diagram.svg" width="280" height="280">
 </Details> 
+<br>
 
 <b>Description:</b><br>
-This repository illustrates how MonteCarlo simulations obtains fundamental decision-making tools as: $E[X]$:<br>
+[Github-app parse](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/Description.jpg)
 
-$$E[X] \approx \frac{1}{N_{sim}} \sum_{i=1}^{N_{sim}} X_i=\mu_{M.C}$$
+This repository illustrates how MonteCarlo calculates crucial decision-making tools from simulations $X \sim f(X)$ like [$E[X]$](README.md#references):
 
-As well as its $RoI$, Probabilities $P(X)$, from its prob. density function (<i>pdf</i>) $f(X)$ and cumulative distribution function (<i>cdf</i>) $F(X)$.<br>
+$$E[X] \approx \frac{1}{N} \sum_{i=1}^{N} x_i = \mu_{M.C}$$
+
+<b>$X$</b> = <i>Random Variable from simulations.</i> <br>
+<b>$\mu_{M.C}$</b> = <i>Mean of the MonteCarlo Simulations.</i><br>
+<b>$N$</b> = <i>No° of Simulations.</i>
+
+$\&$ [$E[RoI]$](README.md#references) and probabilities with their density function [$f_X(x)$](README.md#references) $\&$ <i>cumulative distribution</i> [$F_X(x)$](README.md#references):
+
+In this case, with an expected Capital per game in a set of games $(n=100)$ planned to be played in a <i>Casi-no</i>:
+
+$$E[X_1]+ E[X_2] + ... +E[X_n] = \mu_{M.C{_1}} + \mu_{M.C{_2}} + ... + \mu_{M.C_n}$$
+
+<b>$X$</b> = <i>Random Variable from simulations.</i> <br>
+<b>$\mu_{M.C}$</b> = <i>Mean of the MonteCarlo Simulations.</i><br>
+<b>$N$</b> = <i>No° of Simulations.</i>
+
+*(See [Repo Visualization](#Repo-Visualization) → render)* for more details.
+
 <Details> <Summary> <b>  Results: </b> </Summary>
   
-Even though ${E[X]}\approx \mu_{M.C}$ in every simulation, there are other values that are possible as well $\forall N_{sim}$ in the Casi-no:<br>
+The Expectancy of the Capital could have the following outcomes used for $E[X]$ $\&$ $E[RoI]$:<br>
 <img src="/images/MC_Sim.jpg" width="800" height="463"><br>
 
-So the Prob. of Win/Lose $\forall N_{sim} = 10000$ are:
+At the $100_{th}$ the Win chances are:
 
 <img src="/images/W-L.jpg" width="197" height="87"><br>
 
-In this regard, the pdf $f(X)$, the cdf $F(X)$ & its Expected values $E(X) = \mu_{M.C}$ are:
+Probabilities are illustrated with their frequencies:
 
 <img src="/images/fx.jpg" width="260" height="491"><br>
 
-Resulting prob. density functions $f(X)$ on $Win_{Events}$ & $FV$:
+Resulting prob. density functions $f(X)$ on Wins & $E[X]$ should be the same as $X$ is discrete:
 <img src="/images/histogram.jpg" width="896" height="402">
 </Details> 
 
 ###### References:<br>
+
 + [Monte Carlo Estimator](http://www.mit.edu/~kircher/sim.pdf)<br>
-+ [Expectancy $E[X]$](https://en.wikipedia.org/wiki/Expected_value) ,&nbsp; [$RoI$](https://en.wikipedia.org/wiki/Rate_of_return)<br>
-+ [$f(x)$ <b>(PDF)</b> <i> Probability density function </i>](https://en.wikipedia.org/wiki/Probability_density_function)<br>
-+ [$F(x)$ <b>(CDF)</b> <i> Cumulative distribution function </i>](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
++ [$E[X]$](https://en.wikipedia.org/wiki/Expected_value) ,&nbsp; [$RoI$](https://en.wikipedia.org/wiki/Rate_of_return)<br>
++ [$f_X(x)$](https://en.wikipedia.org/wiki/Probability_density_function)<br>
++ [$F_X(x)$](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
++ [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)<br>
++ [LaTeX](https://en.wikipedia.org/wiki/List_of_mathematical_symbols_by_subject)<br>

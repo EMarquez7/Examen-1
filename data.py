@@ -6,13 +6,15 @@
 # -- Environment: https://github.com/EstebanMqz/MonteCarlo-Simulations/blob/main/data.py
 # -- --------------------------------------------------------------------------------------------------  -- #
 
-"""} #Dependencies
+"""} 
+#Dependencies
 import glob
 import os
 import subprocess
 import functions as fn 
 
 #Libraries 
+import numpy as np
 import pandas as pd
 
 import warnings
@@ -123,4 +125,29 @@ def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
 
     return df
 
+def frequencies(MC):
+    {"""
+    Calculate the frequencies of simulations of events in a pd.DataFrame.
+    
+    Parameters
+    ----------
+    + df : pd.DataFrame
+        DataFrame with simulation of events (df.T == df).
+    Returns
+    -------
+    + pd.DataFrame
+        DataFrame with the frequencies.
+    """}
+
+    N = MC.shape[0] if MC.shape[0] > MC.shape[1] else MC.shape[1]
+    if N == MC.shape[0]:
+        unique, counts = np.unique(MC.iloc[:, -1], return_counts=True)
+    else:
+        unique, counts = np.unique(MC.iloc[-1], return_counts=True)
+
+    df_freq = pd.DataFrame({'$x_n$': unique, 'frequency': counts}).set_index('$x_n$').sort_values(by='$x_n$', ascending=True)
+    df_freq['$f(x)$'] = df_freq['frequency'] / N
+    df_freq['$F(x)$'] = df_freq['frequency'].cumsum() / N
+    
+    return df_freq
 

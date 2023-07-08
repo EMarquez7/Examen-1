@@ -130,3 +130,20 @@ def coin_game(initial_cap, bet, n_tosses, prize, start):
     capital.index = capital.index + 1
 
     return capital
+
+
+def tab_md(df):
+     {""" This function creates a table in markdown format from a dataframe. 
+     Parameters
+     ----------
+     + df: pandas.core.frame.DataFrame
+         Dataframe to be converted to markdown format.
+     Returns:
+     --------
+     + table: str
+         Table in markdown format.
+     """}
+     
+     return d.Markdown(tabulate(df, headers='keys', tablefmt='github', showindex=True))
+     
+      
