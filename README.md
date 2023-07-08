@@ -35,29 +35,25 @@
 <b>Description:</b><br>
 [Github-app parse](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/Description.jpg)
 
-This repository illustrates how MonteCarlo calculates crucial decision-making tools from simulations $X \sim f(X)$ like [$E[X]$](README.md#references):
+This repository illustrates how MonteCarlo calculates crucial decision-making tools from simulations $X \sim f(X)$ like [E[X]](README.md#references):
 
 $$E[X] \approx \frac{1}{N} \sum_{i=1}^{N} x_i = \mu_{M.C}$$
 
-<b>$X$</b> = <i>Random Variable from simulations.</i> <br>
-<b>$\mu_{M.C}$</b> = <i>Mean of the MonteCarlo Simulations.</i><br>
-<b>$N$</b> = <i>No° of Simulations.</i>
+$X$ = <i>Random Variable from simulations.</i> <br>
+$\mu_{M.C}$ = <i>Mean of the MonteCarlo Simulations.</i><br>
+$N$ = <i>No° of Simulations.</i>
 
-$\&$ [$E[RoI]$](README.md#references) and probabilities with their density function [$f_X(x)$](README.md#references) $\&$ <i>cumulative distribution</i> [$F_X(x)$](README.md#references):
+& [E[RoI]](README.md#references) and probabilities with their density function [f(x)](README.md#references) & <i>cumulative distribution</i> [F(x)](README.md#references):
 
 In this case, with an expected Capital per game in a set of games $(n=100)$ planned to be played in a <i>Casi-no</i>:
 
-$$E[X_1]+ E[X_2] + ... +E[X_n] = \mu_{M.C{_1}} + \mu_{M.C{_2}} + ... + \mu_{M.C_n}$$
-
-<b>$X$</b> = <i>Random Variable from simulations.</i> <br>
-<b>$\mu_{M.C}$</b> = <i>Mean of the MonteCarlo Simulations.</i><br>
-<b>$N$</b> = <i>No° of Simulations.</i>
+$$E[X_1]+ E[X_2] + ... + E[X_n] = \mu_{MC{_{1,2,...n}}}$$
 
 *(See [Repo Visualization](#Repo-Visualization) → render)* for more details.
 
 <Details> <Summary> <b>  Results: </b> </Summary>
   
-The Expectancy of the Capital could have the following outcomes used for $E[X]$ $\&$ $E[RoI]$:<br>
+The Expectancy of the Capital could have the following outcomes used for $E[X]$ & $E[RoI]$:<br>
 <img src="/images/MC_Sim.jpg" width="800" height="463"><br>
 
 At the $100_{th}$ the Win chances are:
@@ -75,8 +71,7 @@ Resulting prob. density functions $f(X)$ on Wins & $E[X]$ should be the same as 
 ###### References:<br>
 
 + [Monte Carlo Estimator](http://www.mit.edu/~kircher/sim.pdf)<br>
-+ [$E[X]$](https://en.wikipedia.org/wiki/Expected_value) ,&nbsp; [$RoI$](https://en.wikipedia.org/wiki/Rate_of_return)<br>
-+ [$f_X(x)$](https://en.wikipedia.org/wiki/Probability_density_function)<br>
-+ [$F_X(x)$](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
++ [E[X]](https://en.wikipedia.org/wiki/Expected_value) ,&nbsp; [RoI](https://en.wikipedia.org/wiki/Rate_of_return)<br>
++ [f(X)](https://en.wikipedia.org/wiki/Probability_density_function) , &nbsp; [F(X)](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
 + [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)<br>
 + [LaTeX](https://en.wikipedia.org/wiki/List_of_mathematical_symbols_by_subject)<br>
