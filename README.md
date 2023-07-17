@@ -37,7 +37,7 @@
 
 <b>Description:</b><br>
 
-[$LaTeX-App_{display}$](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/Description.jpg)
+[LaTeX gh-app](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/Description.jpg)
 
 This repository illustrates how MonteCarlo calculates crucial decision-making tools from simulations $X \sim f(X)$ like [E[X]](README.md#references):
 
@@ -106,6 +106,7 @@ Resulting $f(X)$ on the Winning Games in a $100_{th}$ played & the $\mu_{MC{_{1,
 <i>See [Repo Visualization](#Repo-Visualization) render for more details.</i><br>
 </Details> 
 
+###### Reusable: [vs.MC_plot](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/visualizations.py), [fn.docstring](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [fn.tab_md](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [fn.README_md](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [dt.get_requirements](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py), [dt.write_docstring](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py), [dt.frequencies](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py)
 ###### References: <br>
 
 + [Monte Simulations](http://www.mit.edu/~kircher/sim.pdf)<br>
