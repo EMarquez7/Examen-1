@@ -8,9 +8,10 @@
 
 """} 
 #Dependencies
-from os import path
+import os
 import glob
-import subprocess
+
+# import subprocess
 import visualizations as vs
 import data as dt
 
@@ -21,7 +22,9 @@ import matplotlib.pyplot as plt
 from random import randrange
 
 import IPython.display as d
+from IPython.display import HTML
 from tabulate import tabulate
+import markdown2
 
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -58,6 +61,43 @@ def docstring(repository, requirements, author, license, environment):
 # -- --------------------------------------------------------------------------------------------------  -- #
 \n""")
 
+def tab_md(df):
+     {""" This function creates a table in markdown format from a dataframe. 
+      
+     Parameters
+     ----------
+     + df: pd.Dataframe
+         pd.Dataframe to be converted to markdown format.
+     Returns:
+     --------
+     + table: str
+         Table in markdown format.
+     """}
+     return d.Markdown(tabulate(df, headers='keys', tablefmt='github', showindex=True))
+
+def README_md(df, capture):
+     {""" This function creates a table in markdown format from a dataframe. 
+      
+     Parameters
+     ----------
+     + df: pd.Dataframe
+         pd.Dataframe to be converted to markdown format.
+     + capture: bool
+        If True, the output returns the table to be used for markdown, else, its output is empty.
+     Returns:
+     --------
+     + table: str
+         Table in markdown format.
+     """}
+     md_table = tabulate(df, headers='keys', tablefmt='github', showindex=True, numalign="center", 
+                                stralign="center", floatfmt=".4f", disable_numparse=False)
+     str_html = markdown2.markdown(md_table)
+     if capture==True:
+        str_html = str_html.replace('<p>', '').replace('</p>', '').replace('\n', '').replace('---------', '---------:').replace('||', '|').replace(':-|', ':|')
+     else:
+        str_html = ''
+
+     return str_html
 
 def coin_game(initial_cap, bet, n_tosses, prize, start):
     {"""
@@ -130,20 +170,4 @@ def coin_game(initial_cap, bet, n_tosses, prize, start):
     capital.index = capital.index + 1
 
     return capital
-
-
-def tab_md(df):
-     {""" This function creates a table in markdown format from a dataframe. 
-     Parameters
-     ----------
-     + df: pandas.core.frame.DataFrame
-         Dataframe to be converted to markdown format.
-     Returns:
-     --------
-     + table: str
-         Table in markdown format.
-     """}
-     
-     return d.Markdown(tabulate(df, headers='keys', tablefmt='github', showindex=True))
-     
       

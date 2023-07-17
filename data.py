@@ -10,6 +10,7 @@
 #Dependencies
 import glob
 import os
+# from os import path
 import subprocess
 import functions as fn 
 
@@ -21,10 +22,11 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # -- ----------------------------------------------------------------------------------------------- data ------------------------------------------------------------------------------- -- #
+
 def get_requirements(docstring, ext):
     {"""
     Function to create requirements.txt with required packages & versions to 
-    setup an environment for a project's execution to ensure collaborations.
+    setup a virtual environment for a project's execution.
 
     Parameters:
     ----------
@@ -37,8 +39,7 @@ def get_requirements(docstring, ext):
     + requirements.txt: .txt file
         .txt script with modules & versions used in repository to setup or update venv & ensure collaborations.
     """}
-
-    mod = [__import__(name[:-3]) for name in glob.glob(ext)]   
+ 
     subprocess.run(["pipreqs", "--encoding", "utf-8", "./", "--force"])
     
     with open("requirements.txt", "r+") as f:
@@ -60,7 +61,6 @@ def get_requirements(docstring, ext):
     with open(glob.glob('*.txt')[0], 'r') as file: print(file.read())
 
     script = glob.glob(ext)
-
     return print("scripts:", script)
 
 def write_docstring(docstring, script):
@@ -76,8 +76,8 @@ def write_docstring(docstring, script):
 
     Returns:
     -------
-    + str(docstring) + script: str
-        The docstring inserted in the .py script.    
+    * (docstring: str) + (script: str)
+        The docstring inserted in the beginning of the .py script.    
     """}
 
     cwd = os.getcwd()
@@ -92,7 +92,7 @@ def write_docstring(docstring, script):
         else:
             pass
 
-    return print(str('Succesfully created docstring for: ') + script)
+    return print(str('Succesfully created docstring for: ') + os.path.join('.', script))
 
 def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
     {"""Creates a dataframe of n simulations of the coin game for n_tosses.
