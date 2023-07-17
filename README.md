@@ -100,7 +100,9 @@ Probabilities are illustrated with their frequencies:
 
 Resulting $f(X)$ on the Winning Games in a $100_{th}$ played & the $\mu_{MC{_{1,2,...n}}}$ should be the same as $X$ is discrete for both games and Capital:<br>
 
-![bar](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/bar_plots.jpg)<br>
+![bar](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/images/bar_plot.jpg)
+
+<br>
 
 <b>Note:</b> $n_{\Delta}$ $\approx$ $\xi$ for each simulation $\mu_{MC{_{n_1,n_2,..}}}$<br> 
 <i>See [Repo Visualization](#Repo-Visualization) render for more details.</i><br>
