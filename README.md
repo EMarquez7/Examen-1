@@ -66,7 +66,7 @@ The Expectancy of the Capital could have the following outcomes for $E[X_{1,2,..
 
 At the $100_{th}$ game the probability to Win is:
 
-|        | $Pr(E[X_n] \geq \$50)$ |
+|        | $Pr(E[X_n] \geq 50)$  |
 |--------|-----------------------|
 | True   | 0.1944                |
 | False  | 0.8056                |
