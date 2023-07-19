@@ -1,7 +1,6 @@
 ### **MonteCarlo Simulation** <br><br>
 
-<Details>
-<Summary> <i>Tools:</i> </Summary>
+<Details> <Summary> <i>Tools:</i> </Summary>
   
 ##### Actions:  [![Repo-Visualization-Badge](https://img.shields.io/badge/Action-Visualization-020521?style=square&logo=github&logoColor=white)](https://githubnext.com/projects/repo-visualization)
 ##### Main Text-Editor:  [![VSCode-Badge](https://img.shields.io/badge/VSCode-007ACC?style=square&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)  [![Jupyter-Badge](https://img.shields.io/badge/Jupyter-F37626?style=square&logo=Jupyter&logoColor=white)](https://jupyter.org/try)
