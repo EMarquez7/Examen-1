@@ -75,7 +75,7 @@ At the $100_{th}$ game the probability to Win is:
 
 Probabilities are illustrated with their frequencies:
 
-| $x_n$ | frequency | $f(x)$ | $F(x)$ |
+| $x_i$ | frequency | $f(x)$ | $F(x)$ |
 |-----|-----------|------|------|
 | -31 | 3         | 0.0003 | 0.0003 |
 | -22 | 16        | 0.0016 | 0.0019 |
@@ -103,15 +103,13 @@ Resulting $f(X)$ on the Winning Games in a $100_{th}$ played & the $\mu_{MC{_{1,
 
 <br>
 
-<b>Note:</b> $n_{\Delta}$ $\approx$ $\xi$ for each simulation $\mu_{MC{_{n_1,n_2,..}}}$<br> 
+<b>Note:</b> $\left|\mu_{MC{_{n_i}}} \right|$ - $|\mu_{MC{_{n_{i+1}}}}|$
+ $\approx$ $\xi$ $\forall$ $\Delta_n$ simulations. <br> 
 <i>See [Repo Visualization](#Repo-Visualization) render for more details.</i><br>
 </Details> 
 
-###### Reusable: [vs.MC_plot](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/visualizations.py), [fn.docstring](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [fn.tab_md](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [fn.README_md](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/functions.py), [dt.get_requirements](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py), [dt.write_docstring](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py), [dt.frequencies](https://github.com/EstebanMqz/MonteCarlo-Simulation/blob/main/data.py)
-###### References: <br>
-
-+ [Monte Simulations](http://www.mit.edu/~kircher/sim.pdf)<br>
-+ [E[X]](https://en.wikipedia.org/wiki/Expected_value) ➡️ [RoI](https://en.wikipedia.org/wiki/Rate_of_return)<br>
-+ [f(X) mass function](https://en.wikipedia.org/wiki/Probability_mass_function) ↔ [F(X)](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
-+ [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)<br>
++ [MonteCarlo Methods](https://phyusdb.files.wordpress.com/2013/03/monte-carlo-methods-second-revised-and-enlarged-edition.pdf)<br>
++ [E[X]](https://en.wikipedia.org/wiki/Expected_value) → [RoI](https://en.wikipedia.org/wiki/Rate_of_return)<br>
++ [f(X) ](https://en.wikipedia.org/wiki/Probability_mass_function) ↔ [F(X)](https://en.wikipedia.org/wiki/Cumulative_distribution_function)<br>
 + [LaTeX](https://en.wikipedia.org/wiki/List_of_mathematical_symbols_by_subject)<br>
++ [`random.randrange`](https://docs.python.org/3/library/random.html#random.randrange)<br>

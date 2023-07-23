@@ -77,6 +77,7 @@ def MC_plot(MC, EX, xlabel , ylabel, img_name, ext):
 
     return plt.show()
 
+
 def bar_plots(df1, df2, xlabel1, xlabel2, title1, title2, img_name, ext):
 
     {"""

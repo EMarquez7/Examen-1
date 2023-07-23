@@ -51,17 +51,15 @@ def get_requirements(docstring, ext):
     with open(glob.glob('*.txt')[0], 'r') as file:
         lines = file.readlines()
         for line in lines:
-            if '~' in line:
+            if '~' in line: #Typo error= ~ (<=) are invalid pkgs.
                 lines.remove(line)
-            elif 'ipython' in line:
-                lines.remove(line)
-                lines.append('ipython >= 8.10.0 \n') 
 
     with open(glob.glob('*.txt')[0], 'w') as file: file.writelines(lines)
     with open(glob.glob('*.txt')[0], 'r') as file: print(file.read())
 
     script = glob.glob(ext)
     return print("scripts:", script)
+
 
 def write_docstring(docstring, script):
     {"""
@@ -94,6 +92,7 @@ def write_docstring(docstring, script):
 
     return print(str('Succesfully created docstring for: ') + os.path.join('.', script))
 
+
 def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
     {"""Creates a dataframe of n simulations of the coin game for n_tosses.
     Parameters
@@ -124,6 +123,7 @@ def coin_game_sim(i_capital, bet, n_tosses, prize, i_tosses_counter, n_sim):
     df.rename(columns={str(n_tosses): n_tosses}, inplace=True)
 
     return df
+
 
 def frequencies(MC):
     {"""

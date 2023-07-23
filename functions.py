@@ -61,6 +61,7 @@ def docstring(repository, requirements, author, license, environment):
 # -- --------------------------------------------------------------------------------------------------  -- #
 \n""")
 
+
 def tab_md(df):
      {""" This function creates a table in markdown format from a dataframe. 
       
@@ -74,6 +75,7 @@ def tab_md(df):
          Table in markdown format.
      """}
      return d.Markdown(tabulate(df, headers='keys', tablefmt='github', showindex=True))
+
 
 def README_md(df, capture):
      {""" This function creates a table in markdown format from a dataframe. 
@@ -98,6 +100,7 @@ def README_md(df, capture):
         str_html = ''
 
      return str_html
+
 
 def coin_game(initial_cap, bet, n_tosses, prize, start):
     {"""
